@@ -13,6 +13,7 @@ const productReducer = (state = INITIAL_STATE, action) => {
     const { type, payload } = action;
 
     switch(type){
+        case actionTypes.FETCH_PRODUCTS: return {...state, products: payload };
         case actionTypes.SET_PRODUCTS: return {...state, products: payload };
         case actionTypes.SELECTED_PRODUCT: return { ...state, selected_product: payload };
         case actionTypes.REMOVE_SELECTED_PRODUCT: 

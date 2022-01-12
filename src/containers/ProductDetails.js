@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams, useLocation, withRouter } from 'react-router-dom';
-import { products_api } from '../API/Products';
+import { useParams, withRouter } from 'react-router-dom';
+//import { useLocation } from 'react-router-dom';
+//import { products_api } from '../API/Products';
 import { selectedProduct, removeProduct } from '../redux/actions/productActions';
 import Rhombus from '../images/Rhombus.gif';
 
@@ -11,19 +12,20 @@ const ProductDetails = (props) => {
     const dispatch = useDispatch();
     const product = useSelector(state => state.product.selected_product);
 
-    console.log('product', product, productId);
+    // console.log('product', product, productId);
 
-    const fetchProductDetail = async () => {
-        try {
-            const { data } = await products_api.get(`/products/${productId}`)
-            dispatch(selectedProduct(data));
-        } catch(err){
-            console.log(err);
-        }
-    }
+    // const fetchProductDetail = async () => {
+    //     try {
+    //         const { data } = await products_api.get(`/products/${productId}`)
+    //         dispatch(selectedProduct(data));
+    //     } catch(err){
+    //         console.log(err);
+    //     }
+    // }
 
     useEffect(() => {
-        fetchProductDetail();
+        // fetchProductDetail();
+        dispatch(selectedProduct(productId));
 
         return () => {
             dispatch(removeProduct())
