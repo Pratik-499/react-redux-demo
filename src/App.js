@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Header from './containers/Header';
 import ProductListing from './containers/ProductListing';
 import ProductDetails from './containers/ProductDetails';
+import Page404 from './containers/Page-404';
+import Contact from './containers/Contact';
 
 function App() {
   return (
@@ -17,7 +19,12 @@ function App() {
           <Route path="/products/:productId">
             <ProductDetails />
           </Route>
-          <Route>404 Not Found</Route>
+          <Route path="/pages/contact">
+            <Contact />
+          </Route>
+          <Route>
+            <Page404 />
+          </Route>
         </Switch>
       </div>
     </Router>
