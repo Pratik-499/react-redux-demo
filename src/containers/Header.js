@@ -5,6 +5,7 @@ const Header = () => {
   const nav_links = [
     { title: "Home", url: "/" },
     { title: "Contact us", url: "/pages/contact" },
+    { title: "Account", url: "/account" },
   ];
   const nav_links_jsx = nav_links.map((nav_link) => (
     <NavLink exact key={nav_link.url} to={nav_link.url} className={isActive => isActive ? 'item active': 'item'}>
